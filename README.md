@@ -9,6 +9,8 @@
 
 -Currently the aerofoil coordinates must be manually input onto the program, because this program was to optimise one individual aerofoil, however, the program can be used on any other aerofoil. 
 
+Evaluation of performance relies on Xfoil, the application is included in this repository and comes from - https://web.mit.edu/drela/Public/web/xfoil/
+
 # Planned Additions
 
 -Allow the program to take a file input of aerofoil coordinates to allow for more user friendly usage.
