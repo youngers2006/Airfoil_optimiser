@@ -137,11 +137,11 @@ def main():
     )
 
     if not shutil.which("xfoil.exe"):
-        print("ERROR: xfoil.exe not found in your system's PATH.")
+        print("error: xfoil.exe not found in your system's PATH.")
         print("Please add the XFoil directory to your PATH or place xfoil.exe in this script's directory.")
         return
 
-    print("Loading baseline airfoil SG6043")
+    print("Loading baseline airfoil")
     base_upper, base_lower = load_baseline_airfoil(AEROFOIL_COORDS)
     
     print("Performing baseline geometry check")
@@ -152,7 +152,7 @@ def main():
     else:
         print("Baseline geometry is valid. Starting optimization.")
     
-    output_dir = "optimization_results"
+    output_dir = "optimisation_results"
     os.makedirs(output_dir, exist_ok=True)
     
     print(f"Creating initial population, output files will be saved in '{output_dir}'")
@@ -164,7 +164,7 @@ def main():
         for i, individual in enumerate(population):
             print(f"Evaluating individual {i+1}/{POPULATION_SIZE}...")
             evaluate_fitness(individual, base_upper, base_lower, Parameters, gen, i)
-            print(f"  -> Fitness (L/D max): {individual.fitness:.4f}")
+            print(f"Fitness (L/D max): {individual.fitness:.4f}")
 
         population.sort(key=lambda x: x.fitness, reverse=True)
         

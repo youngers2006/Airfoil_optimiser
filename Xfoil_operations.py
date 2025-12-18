@@ -88,10 +88,10 @@ def run_xfoil(airfoil_coords, generation, individual_idx, Parameters):
     except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as e:
         print(f"XFoil failed for {airfoil_name}. Error: {e}")
         if hasattr(e, 'stdout'):
-            print("--- XFOIL STDOUT ---")
+            print("XFOIL STDOUT")
             print(e.stdout)
         if hasattr(e, 'stderr'):
-            print("--- XFOIL STDERR ---")
+            print("XFOIL STDERR")
             print(e.stderr)
 
         if os.path.exists(dat_file): os.remove(dat_file)
@@ -107,7 +107,7 @@ def run_xfoil(airfoil_coords, generation, individual_idx, Parameters):
                 ld_ratios = polar_data[valid_indices, 1] / polar_data[valid_indices, 2]
                 max_ld = np.max(ld_ratios) if ld_ratios.size > 0 else -100.0
         else:
-            print(f"  -> XFoil ran, but polar file '{polar_file}' is missing or empty.")
+            print(f"XFoil ran, but polar file '{polar_file}' is missing or empty.")
             max_ld = -100.0
 
     except Exception as e:
