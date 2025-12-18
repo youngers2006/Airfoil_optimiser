@@ -1,2 +1,3 @@
 # Airfoil_optimiser
-Using a genetic algorithm to optimise an airfoil (maximise Cl/Cd) at a particular Reynolds number
+Objective: This project aims to optimise a given input aerofoil using a genetic algorithm with Xfoil evaluation. The need for this project was brought about due to a wind tunnel design project where aerofoil selection was key to maximising efficiency. This progrm aims to optimise the aerofoil to maximise Cl/Cd at a particular Reynolds number but the optimisation objective can be changed freely.
+Results: Optimising the aerofoil sg6043 for Cl/Cd (an aerofoil already designed for wind turbine use) saw a 15.4% increase in 30 minutes of runtime. I will add more explanatory results here later (plots and graphs etc).
